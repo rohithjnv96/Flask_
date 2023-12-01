@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Tracker - Sign Up</title>
+</head>
+<body>
+    <h1>Join Today</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            {{ form.username.label() }}
+            {{ form.username() }}
+            {% if form.username.errors %}
+                {% for err in form.username.errors %}
+                    <span>{{ err }} </span>
+                {% endfor %}
+            {% endif %}
+            <br>
+            {{ form.email.label() }}
+            {{ form.email }}
+            {% if form.email.errors %}
+                {% for err in form.email.errors %}
+                    <span>{{ err }} </span>
+                {% endfor %}
+            {% endif %}
+            <input type="submit">
+        </fieldset>
+    </form>
+
+</body>
+</html>
