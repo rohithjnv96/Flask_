@@ -2,9 +2,6 @@
 from flask import *
 from forms import SignUpForm
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'SECRET_KEY'
-
 
 @app.route('/')
 def hello_world():
@@ -22,7 +19,3 @@ def signup():
 @app.route('/register_user', methods=['POST'])
 def register_user():
     return f'{request.form["username"]} -> {request.form.get("email")}'
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
